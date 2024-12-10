@@ -116,8 +116,19 @@ Node *reverse_between(Node *head, int m, int n) {
 int main(void) {
   int data[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   Node *head = list_from_array(data, 10);
+
+  printf("Original list:\n");
   print_nodes(head);
-  print_nodes(reverse_between(head, 2, 5));
+
+  int m = 2;
+  int n = 5;
+
+  printf("\nReversed list (between positions %d and %d):\n", m, n);
+  head = reverse_between(head, m, n);
+  print_nodes(head);
+
   free_list(head);
+  printf("\nDone.\n");
   return 0;
+
 }
